@@ -1,0 +1,15 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - echo "No pre-build step needed for this project" # Simple confirmation message
+    build:
+      commands:
+        - echo "No build step needed for this static project" # No build tools are used
+  artifacts:
+    baseDirectory: / # Root directory where all static files are located
+    files:
+      - '**/*' # Include all files and subdirectories
+  cache:
+    paths: [] # No caching required
