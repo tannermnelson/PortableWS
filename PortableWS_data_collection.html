@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portable Weigh Stations Data Collection Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="banner">
+        <h1>Data Entry</h1>
+    </div>
+    <br>
+    <button id="toggleUpdateRecord" class="top-right-button">Update a Record</button>        
+    <form id="userForm">
+        <div id="updateRecord" style="margin-top: 30px;">
+            <h2>Update Existing Record</h2>
+            <label for="updateReportNumber">Report Number</label>
+            <input type="text" id="updateReportNumber" maxlength="10" placeholder="Enter Report Number to Update">
+
+            <label for="updateEmail">Email</label>
+            <input type="email" id="updateEmail" placeholder="Enter Email to Lookup">
+            
+            <button type="button" id="fetchRecord">Fetch Record</button>
+            <p style="font-size: 0.9em; color: #ffffff; margin-top: -10px;">
+                Once record is fetched below, make necessary changes and hit "Submit Record" button at bottom.
+            </p>
+        </div>
+        
+        <div id="submitNewRecord">
+            <h2>Submit Record</h2>
+            <br>
+            <p style="font-size: 0.9em; color: #ffffff; margin-top: -10px;">
+                To enter a new record, start here and hit "Submit Record" button at bottom.
+            </p>
+
+
+            <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+            <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+            <!-- Map Input -->
+            <label for="location">Location</label>
+            <div id="map" style="height: 400px; width: 100%; margin-top: 10px; border: 2px solid #ccc;"></div>
+            <p id="coordinates" style="margin-top: 5px; color: #fff;"></p>
+
+            <!-- Hidden Inputs to Store Lat/Lng -->
+            <input type="hidden" id="latitude" name="latitude">
+            <input type="hidden" id="longitude" name="longitude">
+
+
+            <label for="report_number">Report Number (auto-generated)</label>
+            <input type="text" id="report_number" name="report_number" maxlength="10" required>
+
+
+            <label for="operator">Operator</label>
+            <select id="operator" name="operator" required>
+                <option value="">Select an Operator</option>
+                <option value="L.A. Peele">L.A. Peele</option>
+                <option value="D.L. Braswell">D.L. Braswell</option>
+                <option value="J.L. Arnette">J.L. Arnette</option>
+                <option value="M.G. Conley">M.G. Conley</option>
+                <option value="M.A. Cannon">M.A. Cannon</option>
+                <option value="C.M. McGinnis">C.M. McGinnis</option>
+                <option value="J. Elledge">J. Elledge</option>
+                <option value="D.F. Smith">D.F. Smith</option>
+                <option value="B.M. Albertson">B.M. Albertson</option>
+                <option value="C.S. Grainger">C.S. Grainger</option>
+            </select>
+
+            
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="Enter Email for Notification">
+            
+            <label for="troop">Troop</label>
+            <select id="troop" name="troop" required>
+                <option value="">Select Troop</option>
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                <option value="E">E</option>
+                <option value="F">F</option>
+                <option value="G">G</option>
+                <option value="H">H</option>
+                <option value="I">I</option>
+                <option value="X">X</option>
+            </select>
+
+
+            <label for="district">District</label>
+            <select id="district" name="district" required>
+                <option value="">Select District</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+            </select>
+
+            <label for="date">Date</label>
+            <input type="date" id="date" name="date">
+
+            <label for="start_time">Start Time</label>
+            <input type="time" id="start_time" name="start_time">
+       
+            <label for="end_time">End Time</label>
+            <input type="time" id="end_time" name="end_time">
+
+            <label for="number_of_trucks">Number of Trucks</label>
+            <input type="text" id="number_of_trucks" name="number_of_trucks" maxlength="10" required placeholder="Enter Number of Trucks">
+
+            <label for="number_of_citations">Citations Issued</label>
+            <input type = "text" id="number_of_citations" name="number_of_citations" required placeholder="Enter Number of Citations:">
+
+            <button type="submit">Submit Record</button>
+        </div>
+    </form>
+    <script src="PortableWS_data_collection.js" defer></script>
+</body>
+</html>

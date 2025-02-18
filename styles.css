@@ -54,3 +54,7 @@ select {
 #otherViolation {
     display: none;
 }
+
+#map { 
+    border-radius: 10px;
+ }
