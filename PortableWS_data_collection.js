@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		spinner.style.display = 'block'; //show spinner
 		
 		// Fetch the existing record from the database
-		fetch(`https://hmrvhhu9r0.execute-api.us-east-2.amazonaws.com/getRecord?inspection_number=${report_number}&email=${encodeURIComponent(email)}`)
+		fetch(`https://jo2nv77ox9.execute-api.us-east-1.amazonaws.com/getRecord?report_number=${report_number}&email=${encodeURIComponent(email)}`)
 			.then(response => {
 				if (response.status === 404) {
 					// Handle 404 specifically
@@ -208,7 +208,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		spinner.style.display = 'block'; //show spinner
 		
 		// Post the record to the database
-		fetch('https://hmrvhhu9r0.execute-api.us-east-2.amazonaws.com/postRecord', {
+		fetch('https://jo2nv77ox9.execute-api.us-east-1.amazonaws.com/postRecord', {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify(formData)
