@@ -141,14 +141,23 @@ document.addEventListener('DOMContentLoaded', function() {
 					document.getElementById('latitude').value = data.latitude;
 					document.getElementById('longitude').value = data.longitude;
 
-					if (marker) {
-    					marker.setLatLng([data.latitude, data.longitude]).bindPopup(`Selected Location: ${data.latitude}, ${data.longitude}`).openPopup();
+					const lat = parseFloat(data.latitude);
+					const lng = parseFloat(data.longitude);
+
+					if (!isNaN(lat) && !isNaN(lng)) { // Check if lat and lng are valid numbers
+					    if (marker) {
+					        marker.setLatLng([lat, lng]).bindPopup(`Selected Location: ${lat}, ${lng}`).openPopup();
+					    } else {
+					        marker = L.marker([lat, lng]).addTo(map).bindPopup(`Selected Location: ${lat}, ${lng}`).openPopup();
+					    }
+					    map.setView([lat, lng], 13);
 					} else {
-    					marker = L.marker([data.latitude, data.longitude]).addTo(map).bindPopup(`Selected Location: ${data.latitude}, ${data.longitude}`).openPopup();
+					    console.warn('Invalid latitude or longitude:', lat, lng);
 					}
 
-					map.setView([data.latitude, data.longitude], 13);
 
+					console.log("Latitude:", data.latitude);
+					console.log("Longitude:", data.longitude);
 					
 
 					//console.log('other_violations:', data.other_violations);
