@@ -155,6 +155,8 @@ document.addEventListener('DOMContentLoaded', function() {
 					    console.warn('Invalid latitude or longitude:', lat, lng);
 					}
 
+					updateCoordinates(lat, lng);
+
 
 					console.log("Latitude:", data.latitude);
 					console.log("Longitude:", data.longitude);
