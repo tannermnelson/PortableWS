@@ -137,6 +137,8 @@ document.addEventListener('DOMContentLoaded', function() {
 					document.getElementById('date').value = data.date;
 					document.getElementById('start_time').value = data.start_time;
 					document.getElementById('end_time').value = data.end_time;
+					document.getElementById('latitude').value = data.latitude;
+					document.getElementById('longitude').value = data.latitude;
 					
 
 					//console.log('other_violations:', data.other_violations);
@@ -203,7 +205,9 @@ document.addEventListener('DOMContentLoaded', function() {
 			start_time,
 			end_time,
 			number_of_trucks,
-			number_of_citations
+			number_of_citations,
+			latitude,
+			longitude
 		};
 
 		spinner.style.display = 'block'; //show spinner
