@@ -137,6 +137,7 @@ document.addEventListener('DOMContentLoaded', function() {
 					document.getElementById('date').value = data.date;
 					document.getElementById('start_time').value = data.start_time;
 					document.getElementById('end_time').value = data.end_time;
+					
 
 					//console.log('other_violations:', data.other_violations);
 					
