@@ -45,10 +45,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	// Generate UUID
 	function generateUUID() {
-	    return 'xxxxxxxx'.replace(/[x]/g, () => {
-	        return Math.floor(Math.random() * 8);
-	    });
+	    const numbers = Array.from({ length: 5 }, () => Math.floor(Math.random() * 10)).join('');
+	    const letter = String.fromCharCode(65 + Math.floor(Math.random() * 26)); // Random uppercase letter (A-Z)
+	    return numbers + letter;
 	}
+
 
 // Auto-fill the report number on page load
     const reportNumberInput = document.getElementById('report_number');
