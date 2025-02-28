@@ -49,7 +49,7 @@
 
 
             <label for="report_number">Report Number (auto-generated)</label>
-            <input type="text" id="report_number" name="report_number" maxlength="10" required>
+            <input type="text" id="report_number" name="report_number" maxlength="10" required readonly>
 
 
             <label for="operator">Operator</label>
@@ -102,13 +102,13 @@
             </select>
 
             <label for="date">Date</label>
-            <input type="date" id="date" name="date">
+            <input type="date" id="date" name="date" required>
 
             <label for="start_time">Start Time</label>
-            <input type="time" id="start_time" name="start_time">
+            <input type="time" id="start_time" name="start_time" required>
        
             <label for="end_time">End Time</label>
-            <input type="time" id="end_time" name="end_time">
+            <input type="time" id="end_time" name="end_time" required>
 
             <label for="number_of_trucks">Number of Trucks</label>
             <input type="text" id="number_of_trucks" name="number_of_trucks" maxlength="10" required placeholder="Enter Number of Trucks">

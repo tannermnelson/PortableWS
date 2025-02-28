@@ -139,7 +139,16 @@ document.addEventListener('DOMContentLoaded', function() {
 					document.getElementById('start_time').value = data.start_time;
 					document.getElementById('end_time').value = data.end_time;
 					document.getElementById('latitude').value = data.latitude;
-					document.getElementById('longitude').value = data.latitude;
+					document.getElementById('longitude').value = data.longitude;
+
+					if (marker) {
+    					marker.setLatLng([data.latitude, data.longitude]).bindPopup(`Selected Location: ${data.latitude}, ${data.longitude}`).openPopup();
+					} else {
+    					marker = L.marker([data.latitude, data.longitude]).addTo(map).bindPopup(`Selected Location: ${data.latitude}, ${data.longitude}`).openPopup();
+					}
+
+					map.setView([data.latitude, data.longitude], 13);
+
 					
 
 					//console.log('other_violations:', data.other_violations);
